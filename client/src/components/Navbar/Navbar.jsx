@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import "./Navbar.css"
 import Hamburger from 'hamburger-react'
-import HiddenOptions from './HiddenOptions';
+import HiddenOptions from './NavbarCompnents/HiddenOptions';
 
 const Navbar = () => {
     const [isOpen, setOpen] = useState(false);
