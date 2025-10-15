@@ -23,11 +23,7 @@ const Navbar = () => {
             </div>
             <div className='w-[20%] h-[100%] flex justify-center items-center lg:hidden'><Hamburger size={25} toggled={isOpen} toggle={setOpen}/></div>
         </nav>
-        {isOpen?
-        (
-            <HiddenOptions/>
-        )
-        :null}
+        {isOpen?(<HiddenOptions/>):null}
     </div>
 
     
