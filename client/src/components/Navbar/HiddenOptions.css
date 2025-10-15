@@ -1,0 +1,12 @@
+.hidden-box {
+    animation: fade 1s ease-in-out forwards; /* duration 1s, smooth easing, keep final state */
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
