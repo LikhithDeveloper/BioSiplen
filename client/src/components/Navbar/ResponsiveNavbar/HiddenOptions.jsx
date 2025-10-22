@@ -3,7 +3,7 @@ import "./HiddenOptions.css"
 
 const HiddenOptions = () => {
   return (
-    <div className='hidden-box w-[100%] flex pt-[10px] pb-[10px] justify-center items-center lg:hidden'>
+    <div className='hidden-box w-[100%] flex pt-[10px] pb-[10px] h-[100vh] justify-center items-start lg:hidden'>
             <div className=' pt-[10px] pb-[10px] w-[90%] flex items-start flex-col'>
                 <a className='p-3' href='#'>Home</a>
                 <a className='p-3' href='#'>Products</a>
