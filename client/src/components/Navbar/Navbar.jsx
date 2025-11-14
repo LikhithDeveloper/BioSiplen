@@ -1,64 +1,45 @@
-import React, { useState } from 'react'
-import "./Navbar.css"
-import Hamburger from 'hamburger-react'
-import HiddenOptions from './ResponsiveNavbar/HiddenOptions';
-import Card from './Cards/Card';
-import logo from "../../assets/BioSiplen-removebg-preview.png"
+import React from 'react'
+import navImage from "../../assets/plant 1.jpg"
+import navImage2 from "../../assets/Chevron Down.png"
+import whishList from "../../assets/Heart.png"
+import cart from "../../assets/Bag.png"
+import user from "../../assets/user_3 1.png"
 
 const Navbar = () => {
-    const [isOpen, setOpen] = useState(false);
-    const [hover, setHover] = useState(false)
-    const [hoverbtn, sethoverbtn] = useState("");
-    const enableCrad = () => {
-        setHover(true);
-    }
-    const disableCrad = () => {
-        setHover(false);
-    }
-    const btnhover = (name) => {
-        sethoverbtn();
-        if(name == "Services"){
-            sethoverbtn("Services")
-        }else{
-            sethoverbtn("Products")
-        }
-    }
-    const [anime, setAnime] = useState(false);
-    const handelAnime = () => {
-        setAnime(false); 
-        setTimeout(() => setAnime(true), 10);
-    };
   return (
-    <>
-    <div className='w-[100%] pt-[30px] pb-[10px] bg-white  flex justify-center items-center flex-col lg:bg-transparent fixed z-10' onMouseLeave={disableCrad}>
-        <nav className='w-[95%] h-[70px] bg-white/30 backdrop-blur-[3px] rounded-[9px] border border-gray-300 flex justify-between overflow-hidden lg:border-0'>
-            <div className='w-[20%] h-[100%] flex justify-start pl-[30px] items-center lg:pl-[60px]'>
-                {/* <h1 className='text-3xl font-bold lg:text-4xl'>BioSiplen</h1> */}
-                <img src={logo} className='w-[110px]'></img>
+    <div className='w-full'>
+        <div className='w-full pt-[15px] pb-[15px] bg-white flex justify-center items-center'>
+            <img src={navImage} className='w-[20px]'></img>
+            <span className='ml-[5px] text-[20px] font-[600]'>BioSiplen</span>
+        </div>
+        <nav className='w-full bg-[#1A1A1A] pt-[15px] pb-[15px] flex justify-between items-center'>
+            <div className='pl-[10px] pr-[10px] flex justify-around ml-[70px]'>
+                <a href='#' className='group ml-[10px] mr-[10px] text-[#808080] flex justify-center items-center hover:text-white'>Home<img src={navImage2} className='ml-[2px] mt-[5px] transition-transform duration-300 group-hover:rotate-180 group-hover:brightness-0 
+               group-hover:invert'></img></a>
+                <a href='#' className='group ml-[10px] mr-[10px] text-[#808080] flex justify-center items-center hover:text-white'>About<img src={navImage2} className='ml-[2px] mt-[5px] transition-transform duration-300 group-hover:rotate-180 group-hover:brightness-0 
+               group-hover:invert'></img></a>
+                <a href='#' className='group ml-[10px] mr-[10px] text-[#808080] flex justify-center items-center hover:text-white'>Shop<img src={navImage2} className='ml-[2px] mt-[5px] transition-transform duration-300 group-hover:rotate-180 group-hover:brightness-0 
+               group-hover:invert'></img></a>
+                <a href='#' className='group ml-[10px] mr-[10px] text-[#808080] flex justify-center items-center hover:text-white'>Blogs<img src={navImage2} className='ml-[2px] mt-[5px] transition-transform duration-300 group-hover:rotate-180 group-hover:brightness-0 
+               group-hover:invert'></img></a>
+                <a href='#' className='group ml-[10px] mr-[10px] text-[#808080] flex justify-center items-center hover:text-white'>Contact us<img src={navImage2} className='ml-[2px] mt-[5px] transition-transform duration-300 group-hover:rotate-180 group-hover:brightness-0 
+               group-hover:invert'></img></a>
             </div>
-            <div className='h-[100%] pl-[20px] pr-[20px] hidden justify-between items-center lg:flex'>
-                <a href='#'>Home</a>
-                <a href='#' onMouseEnter={() => {
-                    enableCrad();
-                    btnhover("Products");
-                    handelAnime();
-                }}>Products</a>
-                <a href='#' onMouseEnter={() => {
-                    enableCrad();
-                    btnhover("Services");
-                    handelAnime();
-                }}>Services</a>
-                <a href='#'>Careers</a>
+            <div className='flex items-center'>
+                <div className='mr-[170px]'>
+                    <form>
+                        <input type="text" name="search" id="search" placeholder='Search' className='border-2 border-[#808080] rounded-[3px] rounded-tr-[0px] rounded-br-[0px] bg-transparent pl-[10px] pt-[5px] pb-[5px] pr-[30px] text-white' />
+                        <button type='submit' className='bg-[#00B207] pl-[20px] pr-[20px] pt-[7px] pb-[7px] cursor-pointer text-white rounded-tr-[3px] rounded-br-[3px]'>Search</button>
+                    </form>
+                </div>
+                <div className='pl-[10px] pr-[30px] flex'>
+                    <a href='#'><img src={whishList} className='w-[21px] ml-1.5 mr-2'></img></a>
+                    <a href='$'><img src={cart} className='w-[21px] ml-2 mr-2'></img></a>
+                    <a href='%'><img src={user} className='w-[21px] ml-2 mr-2'></img></a>
+                </div>
             </div>
-            <div className='w-[20%] h-[100%] hidden items-center justify-end pr-[70px] lg:flex'>
-                <button className='pt-[7px] pr-[20px] pb-[7px] pl-[20px] rounded-[5px] bg-[#028A48] text-white'>Contact</button>
-            </div>
-            <div className='w-[20%] h-[100%] flex justify-center items-center lg:hidden'><Hamburger size={25} toggled={isOpen} toggle={setOpen}/></div>
         </nav>
-        {isOpen?(<HiddenOptions/>):null}
-        {hover?<Card btndetails={{hoverbtn,anime}} />:null}
-    </div>    
-    </>
+    </div>
   )
 }
 
