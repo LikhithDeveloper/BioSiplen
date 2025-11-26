@@ -4,17 +4,20 @@ import navImage2 from "../../assets/Chevron Down.png"
 import whishList from "../../assets/Heart.png"
 import cart from "../../assets/Bag.png"
 import user from "../../assets/user_3 1.png"
+import test from "../../assets/BioSiplen-removebg-preview.png"
+import "../../App.css"
 
 const Navbar = () => {
   return (
-    <div className='w-full'>
-        <div className='w-full pt-[15px] pb-[15px] bg-white flex justify-center items-center'>
+    <>
+        <div className='w-full pt-[7px] pb-[7px] bg-white flex justify-center items-center'>
             <img src={navImage} className='w-[20px]'></img>
             <span className='ml-[5px] text-[20px] font-[600]'>BioSiplen</span>
         </div>
-        <nav className='w-full bg-[#1A1A1A] pt-[15px] pb-[15px] flex justify-between items-center'>
-            <div className='pl-[10px] pr-[10px] flex justify-around ml-[70px]'>
-                <a href='#' className='group ml-[10px] mr-[10px] text-[#808080] flex justify-center items-center hover:text-white'>Home<img src={navImage2} className='ml-[2px] mt-[5px] transition-transform duration-300 group-hover:rotate-180 group-hover:brightness-0 
+        <nav className='w-full bg-[#1A1A1A] pt-[0px] pb-[0px] flex justify-between items-center sticky top-0 z-50'>
+            <div className='pl-[5px] pr-[5px] flex justify-around ml-[40px]'>
+                <img src={test} className='w-[80px]'></img>
+                <a href='#' className='group ml-[40px] mr-[10px] text-[#808080] flex justify-center items-center hover:text-white'>Home<img src={navImage2} className='ml-[2px] mt-[5px] transition-transform duration-300 group-hover:rotate-180 group-hover:brightness-0 
                group-hover:invert'></img></a>
                 <a href='#' className='group ml-[10px] mr-[10px] text-[#808080] flex justify-center items-center hover:text-white'>About<img src={navImage2} className='ml-[2px] mt-[5px] transition-transform duration-300 group-hover:rotate-180 group-hover:brightness-0 
                group-hover:invert'></img></a>
@@ -39,7 +42,7 @@ const Navbar = () => {
                 </div>
             </div>
         </nav>
-    </div>
+    </>
   )
 }
 
